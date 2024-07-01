@@ -21,10 +21,20 @@
 
 #Write your function here!
 def load_file(file_name):
-    filer = open(filename, "r")
+    filer = open(file_name, "r")
     temp = filer.read()
     filer.close()
-    if 
+    try:
+        return int(temp)
+    except ValueError:
+        pass
+    
+    try:
+        return float(temp)
+    except ValueError:
+        pass
+    
+    return temp
 
 
 #Below are some lines of code that will test your function.
