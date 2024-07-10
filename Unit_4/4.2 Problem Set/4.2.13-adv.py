@@ -39,9 +39,29 @@
 
 
 #Write your function here!
-def find_color(string):
-    lister = list(string)
+def find_color(stringer):
+    cleaned_stringer = stringer.replace("rgb(", "").replace(")", "")
     
+    red_str, green_str, blue_str = cleaned_stringer.split(",")
+    red_val = int(red_str.strip())
+    green_val = int(green_str.strip())
+    blue_val = int(blue_str.strip())
+    
+    if red_val > green_val and red_val > blue_val:
+        return "red"
+    elif green_val > red_val and green_val > blue_val:
+        return "green"
+    elif blue_val > red_val and blue_val > green_val:
+        return "blue"
+    elif red_val == green_val == blue_val:
+        return "gray"
+    elif red_val == green_val:
+        return "yellow"
+    elif red_val == blue_val:
+        return "purple"
+    elif green_val == blue_val:
+        return "teal"
+    return "gray"
 
 
 #Below are some lines of code that will test your function.
