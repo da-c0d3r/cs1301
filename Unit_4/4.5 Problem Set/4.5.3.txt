@@ -1,0 +1,4 @@
+def add_grade(gradebook, student_name, new_grade):
+if student_name not in gradebook:
+gradebook[student_name] = [] # Create an empty list for new students
+gradebook[student_name].append(new_grade) # Add the new grade to the student's list

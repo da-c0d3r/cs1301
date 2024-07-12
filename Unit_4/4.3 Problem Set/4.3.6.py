@@ -11,8 +11,16 @@
 
 
 #Write your function here!
-def find_max_sales(list_of_tuples):
-
+def find_max_sales(movie_list):
+    max_sales = float('-inf')  # Initialize max_sales to a very low value
+    best_movie = ""  # Initialize an empty string for best_movie
+    
+    for movie, sales in movie_list:
+        if sales > max_sales:
+            max_sales = sales
+            best_movie = movie
+    
+    return best_movie
 
 
 #Below are some lines of code that will test your function.

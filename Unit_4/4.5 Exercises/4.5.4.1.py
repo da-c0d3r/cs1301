@@ -11,7 +11,15 @@
 
 
 #Add your function here!
-
+def name_counts(name_list):
+    counts = {}
+    for full_name in name_list:
+        first_name = full_name.split()[0]  # Split by space and take the first part
+        if first_name in counts:
+            counts[first_name] += 1
+        else:
+            counts[first_name] = 1
+    return counts
 
 
 #Below are some lines of code that will test your function.

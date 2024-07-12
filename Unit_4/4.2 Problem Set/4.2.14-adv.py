@@ -29,15 +29,17 @@
 
 
 #Write your function here!
-def steps(numb):
-    for i in range(numb):
-        
-        
-
+def steps(stringer):
+    result = ""
+    for i in range(1,stringer+1):
+        line = str(i) * 3
+        if i == 1:
+            result += line + "\n"
+        else:
+            result += "\t" * (i - 1) + line + "\n"
+    return result
 
 #The following two lines will test your code, but are not
 #required for grading, so feel free to modify them.
 print(steps(3))
 print(steps(6))
-
-

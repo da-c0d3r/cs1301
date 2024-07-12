@@ -34,26 +34,28 @@
 
 #Add your code here!
 def name_fixer(out_file, in_file):
-    with open(in_file, "r") as input_file:
-        lines = input_file.readlines()
-    
+    inside = open(in_file, "r")
+    lines = inside.readlines()
+
     fixed_names = []
+    comma = 0
     
     for line in lines:
-        if line.endswith("\n"):
+        if "\n" in line:
             line = line[:-1]
-        
+
         if "," not in line:
-            fixed_names.append(line)
+            fixed_names.append(line)  
         else:
-            comma_index = line.index(",")
-            first_middle_last = line[comma_index+2:] + " " + line[:comma_index]
-            fixed_names.append(first_middle_last)
-    
-    with open(out_file, "w") as output_file:
-        for name in converted_names:
-            output_file.write(name + "\n")
-        
+            for i in range(len(line)):
+                if line[i] == ",":
+                    comma == line[i]
+            re_arrange = line[comma+2:] + " " + line [:comma]
+            fixed_names.append(re_arrange)
+
+    outside = open(out_file, "w")
+    for name in fixed_names:
+        outside.write(name + "\n")
 #The code below will test your function. You can find the two
 #files it references in the drop-down in the top left. If your
 #code works, output_file.txt should have the text:
@@ -68,4 +70,5 @@ print("Done running! Check output_file.txt for the result.")
 #David Andrew Joyner
 #Hart, Melissa Joan
 #Cyrus, Billy Ray
+
 

@@ -16,10 +16,13 @@
 
 
 #Write your function here!
-def tup_to_dict(list_of_tuples):
-    result = {}
-    
-
+def tup_to_dict(tuples):
+    result_dict = {}
+    for tup in tuples:
+        key = tup[0]
+        value = tup[1]
+        result_dict[key] = value
+    return result_dict
 
 #Below are some lines of code that will test your function.
 #You can change the value of the variable(s) to test your
