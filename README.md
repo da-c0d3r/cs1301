@@ -1,5 +1,15 @@
 # **CS1301**
 
+## How Files are Named
+Example - 1.2.3-wrd.py
+1. Symbolizes which Unit the File is for
+2. Symbolizes which Chapter the File is for
+3. Symbolizes which Individual Question the File is for
+- -wrd Symbolizes if there is a special meaning for the file
+    - Advanced Questions (in problem sets) are distinguished by -adv
+    - Worked Out Problems (in exercises) are distinguished by -wrkd
+    - Tic_Tac_Toe (extra credit question) is distinguished by -ttt
+---
 ## [Unit 1: Basics](/Unit_1/)
 
 - **_1.1_ - Computing**: the basic principles of working with computers.
@@ -34,4 +44,5 @@
 - **_5.1_ - Objects**: Creating and using custom data types so our programs can reason about the world the way we do.
 - **_5.2_ - Algorithms**: Complex sequences of instructions that transform data or generate useful conclusions.
 
+---
 ### [**set up readme stuff**](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
