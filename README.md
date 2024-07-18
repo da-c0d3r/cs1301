@@ -43,7 +43,7 @@ Example - 1.2.3-wrd.py
 
 - **_5.1_ - Objects**: Creating and using custom data types so our programs can reason about the world the way we do.
 - **_5.2_ - Algorithms**: Complex sequences of instructions that transform data or generate useful conclusions.
-- [Types of Sorting Algorithms](Unit_5/5.2 Exercises/Types_of_Sorts/)
+- [Types of Sorting Algorithms](/Unit_5/5.2 Exercises/Types_of_Sorts/)
 
 ---
 ### [**set up readme stuff**](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
