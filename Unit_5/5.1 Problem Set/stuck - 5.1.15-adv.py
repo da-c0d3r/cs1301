@@ -87,10 +87,10 @@ class Beans:
 #Add and modify your code here!
 class Burrito:
     def __init__(self, meat, to_go, rice, beans, extra_meat = False, guacamole = False, cheese = False, pico = False, corn = False):
-        self.meat = Meat(meat)
+        self.meat = self.set_meat(meat)
         self.to_go = self.set_to_go(to_go)
-        self.rice = Rice(rice)
-        self.beans = Beans(beans)
+        self.rice = self.set_rice(rice)
+        self.beans = self.set_beans(beans)
         self.extra_meat = self.set_extra_meat(extra_meat)
         self.guacamole = self.set_guacamole(guacamole)
         self.cheese = self.set_cheese(cheese)
@@ -99,7 +99,11 @@ class Burrito:
 
     # setters
     def set_meat(self, meat):
-        self.meat = Meat(meat).get_value()
+        valid = ["chicken", "pork", "steak", "tofu"]
+        if meat in valid:
+            self.meat = meat
+        else:
+            self.meat = False
         return self.meat
     def set_to_go(self, to_go):
         if type(to_go) != bool:
@@ -108,10 +112,18 @@ class Burrito:
             self.to_go = to_go
         return self.to_go
     def set_rice(self, rice):
-        self.rice = Rice(rice).get_value()
+        valid = ["brown", "white"]
+        if rice in valid:
+            self.rice = rice
+        else:
+            self.rice = False
         return self.rice
     def set_beans(self, beans):
-        self.beans = Beans(beans).get_value()
+        valid = ["black", "pinto"]  
+        if beans in valid:
+            self.beans = beans
+        else:
+            self.beans = False
         return self.beans
     def set_extra_meat(self, extra_meat):
         if type(extra_meat) != bool:
@@ -146,13 +158,13 @@ class Burrito:
 
     # getters
     def get_meat(self):
-        return self.meat.get_value()
+        return self.meat
     def get_to_go(self):
         return self.to_go
     def get_rice(self):
-        return self.rice.get_value()
+        return self.rice
     def get_beans(self):
-        return self.beans.get_value()
+        return self.beans
     def get_extra_meat(self):
         return self.extra_meat
     def get_guacamole(self):
@@ -167,16 +179,15 @@ class Burrito:
     def get_cost(self):
         cost = 5.0
         meater = ["chicken", "pork", "tofu"]
-
-        if self.meat.get_value() in meater:
+        
+        if self.meat in meater:
             cost += 1.00
-        elif self.meat.get_value() == "steak":
+        elif self.meat == "steak":
             cost += 1.50
-        if self.extra_meat and self.meat:    
+        if (self.extra_meat == True) and (self.meat != False):    
             cost += 1.00
         if self.guacamole:
             cost += 0.75
-            
         return cost
 
 
