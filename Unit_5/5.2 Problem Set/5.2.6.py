@@ -32,42 +32,29 @@ from datetime import date
 
 
 #Write your code here!
-def get_year(date_obj):
-    return date_obj.year
-
-def binary_search_year(dates, target_year):
-    # Sort the list of dates based on the year attribute using get_year function
-    sorted_dates = sorted(dates, key=get_year)
-    
-    def binary_search_recursive(sorted_dates, target_year, low, high):
-        if low <= high:
-            mid = (low + high) // 2
-            if sorted_dates[mid].year == target_year:
-                return True
-            elif sorted_dates[mid].year > target_year:
-                return binary_search_recursive(sorted_dates, target_year, low, mid - 1)
-            else:
-                return binary_search_recursive(sorted_dates, target_year, mid + 1, high)
+def binary_search_year(listOfDates, year):
+    listOfDates.sort()
+    if len(listOfDates) == 0:
+        return False
+    else:
+        mid = len(listOfDates) // 2
+        if listOfDates[mid].year == year:
+            return True
+        elif year < listOfDates[mid].year:
+            return binary_search_year(listOfDates[:mid], year)
         else:
-            return False
-    
-    # Call the recursive binary search function
-    return binary_search_recursive(sorted_dates, target_year, 0, len(sorted_dates) - 1)
+            return binary_search_year(listOfDates[mid + 1:], year )
 
 
-#Below are some lines of code that will test your function.
-#You can change the value of the variable(s) to test your
-#function with different inputs.
-#
-#If your function works correctly, this will originally
-#print: True, then False
-listOfDates = [date(2016, 11, 26), date(2014, 11, 29), 
-               date(2008, 11, 29), date(2000, 11, 25), 
-               date(1999, 11, 27), date(1998, 11, 28), 
-               date(1990, 12, 1), date(1989, 12, 2), 
+#The lines below will test your code. If it's working
+#correctly, they will print True, then False.
+listOfDates = [date(2016, 11, 26), date(2014, 11, 29),
+               date(2008, 11, 29), date(2000, 11, 25),
+               date(1999, 11, 27), date(1998, 11, 28),
+               date(1990, 12, 1), date(1989, 12, 2),
                date(1985, 11, 30)]
 
 print(binary_search_year(listOfDates, 2016))
 print(binary_search_year(listOfDates, 2007))
 
-
+#print(binary_search_year(listOfDates))
