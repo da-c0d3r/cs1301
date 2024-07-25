@@ -46,9 +46,6 @@ print(total_names)
 total_births = sum(int(row[1]) for row in data)
 print(total_births)
 
-# -------------------------------------------------------------------------------------------------------------------#
-# PROBLEM QUESTION(SSSSSSSS)
-
 # How many different boys' names are there that begin with the letter Z?
 z_boys_names = len([row for row in data if row[0][0] == 'Z' and row[2] == 'boy'])
 print(z_boys_names)
@@ -65,10 +62,6 @@ print(most_common_q_name)
 vowel_start_end_names = [row for row in data if row[0][0] in 'AEIOU' and row[0][-1] in 'AEIOU']
 total_vowel_names = sum(int(row[1]) for row in vowel_start_end_names)
 print(total_vowel_names)
-
-
-# -------------------------------------------------------------------------------------------------------------------#
-
 
 # What letter is the least common first letter of a baby's name?
 letters_count = {}
@@ -121,18 +114,9 @@ for row in data:
     elif row[2] == 'girl':
         gender_difference[name]['girl'] += count
 
-
-# -------------------------------------------------------------------------------------------------------------------#
-# PROBLEM QUESTION(SSSSSSSS)
-
 # Calculate the smallest difference
 smallest_difference_name = min(gender_difference, key=lambda x: abs(gender_difference[x]['boy'] - gender_difference[x]['girl']))
 print(smallest_difference_name)
-
-
-
-# -------------------------------------------------------------------------------------------------------------------#
-
 
 
 #Here, add any code you want to allow you to answer the
